@@ -32,8 +32,10 @@ int main(void) {
 
     if (guessed_number == NUM){
         std::cout << "Adivinaste\n";
-    } else {
-        std::cout << "No adivinaste\n";
+    } else if(guessed_number > NUM) {
+        std::cout << "Te pasaste\n";
+    } else if(guessed_number < NUM){
+        std::cout << "Te falta\n";
     }
 
     return 0;
