@@ -22,21 +22,25 @@ cout muestra el texto a pantalla
 if (guessed_number = NUM) es un error, a guessed number no le estamos asignando igualdad, lo estamos haciendo 10, para comparar la igualdad usar ==, desigualdad !=, <, >
 
 else, si if no es cierto se procede al if, si if es verdadero se ignora todo el else
+
+hay que inicializar el guessed number po que o si no se van a asignar numeros aleatorios o que no puedo definir
+
+si divido un entero a sobre otro entero >a, toma a como cero
 */
 
 #include <iostream>
 
 int main(void) {
     const int NUM = 10;
-    int guessed_number;
+    int guessed_number = NUM/2;
 
-    for( ; ; ){  
+    while(guessed_number != NUM){  
         std::cout <<"Adivina un número entre 1 y 100:\n";
         std::cin >> guessed_number;
 
         if (guessed_number == NUM){
             std::cout << "Adivinaste\n";
-            break;
+            //break;
         } else if(guessed_number > NUM) {
             std::cout << "Te pasaste\n";
         } else if(guessed_number < NUM){
