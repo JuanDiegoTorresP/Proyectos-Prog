@@ -35,33 +35,52 @@ Clase 4
 double para cálculos físicos, representa numeros dle orden de 10³⁰⁸
 
 continue es volver a iterar sin tomar las lineas que estan por debajo
+
+escribir una funcion: return_type name (parameter1, parameter2){cuepo}
 */
 
 #include <iostream>
 
+// declaracion
+
+void play(void);
+
+
 int main(void) {
+    play();
+
+    return 0;
+}
+
+// Implemetacion
+
+void play(void)
+{
     const int NUM = 10;
     int guessed_number = NUM/2;
 
-    while(guessed_number != NUM){  
-        std::cout <<"Adivina un número entre 1 y 100:\n";
+    const int MIN = 1;
+    const int MAX = 100;
+
+    while(guessed_number != NUM) {
+        std::cout << "Adivina un numero entre  " << MIN << "  y " << MAX << ":\n";
         std::cin >> guessed_number;
-        //std::cout <<"escribiste\n" << guessed_number << "\n";
+        std::cout << "Ecribiste: " << guessed_number << "\n";
 
-        if (guessed_number < 1 or 100 < guessed_number){
-        std::cout <<"el número no está en el rango\n";
-        continue;
-    
-    }
+        // validacion del rango 
+        if (guessed_number < MIN or MAX < guessed_number) {
+            std::cout << "El numero no esta en el rango.\n";
+            continue; 
+        }
 
-        if (guessed_number == NUM){
-            std::cout << "Adivinaste\n";
+        if (guessed_number == NUM) {
+            std::cout << "GANASTE!!!!\n";
             //break;
-        } else if(guessed_number > NUM) {
-            std::cout << "Te pasaste\n";
-        } else if(guessed_number < NUM){
-            std::cout << "Te falta\n";
+        } else if (guessed_number > NUM){
+            std::cout << "Te pasaste.\n";
+        } else { // es menor
+            std::cout << "Te falta.\n";
         }
     }
-    return 0;
+
 }
