@@ -40,27 +40,30 @@ escribir una funcion: return_type name (parameter1, parameter2){cuepo}
 */
 
 #include <iostream>
+#include <cstdlib>
 
-// declaracion
-
-void play(void);
+// declaration
+void play(int min_val, int max_val);
 
 
 int main(void) {
-    play();
-
+    play(1, 100);
+    play(2, 22);
     return 0;
 }
 
-// Implemetacion
-
-void play(void)
+// Implementation
+void play(int min_val, int max_val)
 {
-    const int NUM = 10;
+    int a = min_val + rand() % max_val, valor=0;
+    std::cout<<valor<<std::endl;
+    const int NUM = a;
     int guessed_number = NUM/2;
 
-    const int MIN = 1;
-    const int MAX = 100;
+    const int MIN = min_val;
+    const int MAX = max_val;
+
+    std::cout << "\nINICIA EL JUEGO\n";
 
     while(guessed_number != NUM) {
         std::cout << "Adivina un numero entre  " << MIN << "  y " << MAX << ":\n";
